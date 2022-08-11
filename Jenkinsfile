@@ -23,7 +23,7 @@ tools {
         }
         stage('docker setup') {
             steps {
-            sh 'docker -v'
+            sh 'docker run hello-world'
             }
         }
     }
