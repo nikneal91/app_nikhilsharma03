@@ -23,7 +23,7 @@ tools {
         }
         stage('docker setup') {
             steps {
-            sh 'docker run hello-world'
+            sh 'docker -H unix:///mnt/wsl/shared-docker/docker.sock run hello-world'
             }
         }
     }
