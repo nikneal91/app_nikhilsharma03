@@ -26,5 +26,20 @@ tools {
             sh 'docker run hello-world'
             }
         }
+		stage('docker login') {
+            steps {
+           sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+            }
+        }
+		stage('docker build') {
+            steps {
+            sh 'docker build --rm . -t nikneal91/nagp-demo'
+            }
+        }
+		stage('docker push') {
+            steps {
+            sh 'docker push nikneal91/nagp-demo'
+            }
+        }
     }
 }
