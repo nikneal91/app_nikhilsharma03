@@ -37,9 +37,6 @@ tools {
 				sh 'docker push nikneal91/nagp-demo'
 			}
             }
-			steps {
-			echo 'hello-world'
-			}
         }
 		
     }
