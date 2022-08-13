@@ -18,7 +18,12 @@ tools {
         }
         stage('Maven setup') {
             steps {
-            sh 'mvn -v'
+            sh 'mvn clean package'
+            }
+        }
+        stage('docker setup') {
+            steps {
+            sh 'docker -v'
             }
         }
     }
