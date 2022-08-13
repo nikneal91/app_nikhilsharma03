@@ -36,7 +36,7 @@ tools {
            withCredentials([usernamePassword(credentialsId: 'docker', passwordVariable: 'password', usernameVariable: 'u')]) {
 				sh 'docker login'
 				sh 'docker build --rm . -t nikneal91/i-nikhilsharma03-develop:latest'
-				sh 'docker push nikneal91/nagp-demo'
+				sh 'docker push nikneal91/i-nikhilsharma03-develop:latest'
 			}
             }
         }
