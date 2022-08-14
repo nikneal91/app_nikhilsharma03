@@ -34,7 +34,7 @@ public class TestCases {
 	public void VerifyHomePage() {
 
 		String welcometext = driver.findElement(By.xpath("//*[@class = 'container']/h1")).getText();
-		Assert.assertEquals(welcometext, "DevOps Sample Application", "Text not found");
+		Assert.assertEquals(welcometext, "DevOps Sample Application version 1", "Text not found");
 	}
 	// Forcefully failed this test as to verify listener.
 	@AfterMethod

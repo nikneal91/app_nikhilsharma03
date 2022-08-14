@@ -25,7 +25,7 @@ tools {
 		  branch 'master'
 		}        
 		steps {
-            sh 'echo sonar qube'
+            sh 'mvn sonar:sonar -Dsonar.host.url=http://127.0.0.1:9000 -Dsonar.projectKey=Test_Sonar  -Dsonar.login=sqa_6963ca2eab5354e94ee5bfadbd7a94f02fe515a2'
             }
         }
 		stage('docker') {
