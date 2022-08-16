@@ -39,8 +39,10 @@
 	</header>
 	<div style="margin-top: 180px;"></div>
 	<div class="container">
-	<h3>Java Version: <%= System.getProperty("java.version") %></h3>
-	<h3>Config Map Env: <%= System.getenv("Environment") %></h3>
+	<h3>Config Properties</h3>
+	<p>Env: <%= System.getenv("Environment") %></p>
+	<p>API_URL: <%= System.getenv("API_URL") %></p>
+	<p>Language <%= System.getenv("Language") %></p>
 		<img height="100%" width="100%"
 			src="${pageContext.request.contextPath}/resources/images/helloWorld.jpg"
 			alt="Nagarro DevOps" />
