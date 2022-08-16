@@ -32,6 +32,7 @@ tools {
         }
         stage('CleanUp docker container') {
                     steps {
+                        sh 'docker container stop devopssampleapplication'
         			    sh 'docker container rm devopssampleapplication'
         			}
                 }
