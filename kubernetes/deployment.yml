@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nagp-demo-kubernetes
+  labels:
+    app: myapp
+spec:
+  template:
+    metadata:
+      name: myapp-pod
+      namespace: kubernetes-cluster-nikhilsharma03
+      labels:
+        app: myapp
+        type: front-end
+    spec:
+      containers:
+        - name: nagp-demo-containers
+          image: nikneal91/i-nikhilsharma03-develop
+          envFrom:
+            - configMapRef:
+                name: app-settings
+  replicas: 4
+  selector:
+    matchLabels:
+      type: front-end
+      app: myapp

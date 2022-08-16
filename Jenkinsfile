@@ -37,7 +37,15 @@ tools {
             sh 'mvn sonar:sonar -Dsonar.host.url=http://127.0.0.1:9000 -Dsonar.projectKey=Test_Sonar  -Dsonar.login=sqa_6963ca2eab5354e94ee5bfadbd7a94f02fe515a2'
             }
         }
-
+        stage('kubernetes deployments') {
+            steps {
+                sh 'gcloud container clusters get-credentials nagp-gke --zone asia-south1-a --project dogwood-abacus-359409'
+           		sh 'kubectl get nodes'
+           		sh 'kubectl apply -f kubernetes/configMap.yml'
+           		sh 'kubectl apply -f kubernetes/deployment.yml'
+           		sh 'kubectl apply -f kubernetes/lb-service.yml'
+            }
+        }
 		
     }
 }
