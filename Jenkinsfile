@@ -16,9 +16,17 @@ tools {
         				sh 'docker login'
         				sh 'docker build --rm . -t nikneal91/i-nikhilsharma03-develop:latest'
         				sh 'docker push nikneal91/i-nikhilsharma03-develop:latest'
-        				sh 'docker run -d -p 80:8080 --name devopssampleapplication nikneal91/i-nikhilsharma03-develop:latest'
         			}
                     }
+                }
+                stage('start docker container') {
+                when {
+                				branch 'develop'
+                			}
+                steps {
+                		sh 'docker run -d -p 80:8080 --name devopssampleapplication nikneal91/i-nikhilsharma03-develop:latest'
+
+                }
                 }
         stage('Test Case Execution') {
 			when {
@@ -31,6 +39,9 @@ tools {
 			}
         }
         stage('CleanUp docker container') {
+                 when {
+                 				branch 'develop'
+                 			}
                     steps {
                         sh 'docker container stop devopssampleapplication'
         			    sh 'docker container rm devopssampleapplication'
