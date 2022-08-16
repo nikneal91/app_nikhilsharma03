@@ -16,6 +16,7 @@ tools {
         				sh 'docker login'
         				sh 'docker build --rm . -t nikneal91/i-nikhilsharma03-develop:latest'
         				sh 'docker push nikneal91/i-nikhilsharma03-develop:latest'
+        				sh 'docker run -d -p 8080:8080 --name devopssampleapplication nikneal91/i-nikhilsharma03-develop:latest'
         			}
                     }
                 }
@@ -27,6 +28,9 @@ tools {
 				dir("DemoSampleApp_Jmeter") {
 						sh "mvn clean -Pperformance verify"
 				}    
+			}
+			steps {
+			    sh 'docker container rm devopssampleapplication'
 			}
         }
 		stage('SonarQube Analysis') {
