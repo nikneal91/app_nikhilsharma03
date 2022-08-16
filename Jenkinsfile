@@ -29,10 +29,12 @@ tools {
 						sh "mvn clean -Pperformance verify"
 				}    
 			}
-			steps {
-			    sh 'docker container rm devopssampleapplication'
-			}
         }
+        stage('CleanUp docker container') {
+                    steps {
+        			    sh 'docker container rm devopssampleapplication'
+        			}
+                }
 		stage('SonarQube Analysis') {
 		when {
 		  branch 'master'
