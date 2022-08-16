@@ -14,8 +14,8 @@ tools {
                     steps {
                    withCredentials([usernamePassword(credentialsId: 'docker', passwordVariable: 'password', usernameVariable: 'u')]) {
         				sh 'docker login'
-        				sh 'docker build --rm . -t nikneal91/i-nikhilsharma03-develop:latest'
-        				sh 'docker push nikneal91/i-nikhilsharma03-develop:latest'
+        				sh 'docker build --rm . -t nikneal91/i-nikhilsharma03-'.${env.BRANCH_NAME}.':latest'
+        				sh 'docker push nikneal91/i-nikhilsharma03-'.${env.BRANCH_NAME}.':latest'
         			}
                     }
                 }
@@ -56,6 +56,9 @@ tools {
             }
         }
         stage('kubernetes deployments') {
+        when {
+        		  branch 'develop'
+        		}
             steps {
                 sh 'gcloud container clusters get-credentials nagp-gke --zone asia-south1-a --project dogwood-abacus-359409'
            		sh 'kubectl get nodes'
