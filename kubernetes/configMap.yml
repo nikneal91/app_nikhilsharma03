@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: "appSettings"
+  name: "app-settings"
   labels:
-    app: "appsettings"
+    app: "app-settings"
 data:
   # property-like keys; each key maps to a simple value
   API_URL: "http://www.google.com"
