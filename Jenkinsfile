@@ -21,8 +21,8 @@ tools {
                 }
                 stage('start docker container') {
                 when {
-                				branch 'develop'
-                			}
+                		branch 'develop'
+                	}
                 steps {
                 		sh 'docker run -d -p 80:8080 --name devopssampleapplication nikneal91/i-nikhilsharma03-develop:latest'
 
@@ -57,7 +57,7 @@ tools {
         }
         stage('kubernetes deployments') {
             steps {
-                sh 'gcloud container clusters get-credentials nagp-gke --zone asia-south1-a --project dogwood-abacus-359409'
+                sh 'gcloud container clusters get-credentials nagp-gke --zone asia-southeast1-a --project dogwood-abacus-359409'
            		sh 'kubectl get nodes'
            		sh 'kubectl apply -f kubernetes/namespace.yml'
            		sh 'kubectl apply -f kubernetes/configMap.yml'
