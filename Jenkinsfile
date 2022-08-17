@@ -19,8 +19,8 @@ tools {
                     steps {
                    withCredentials([usernamePassword(credentialsId: 'docker', passwordVariable: 'password', usernameVariable: 'u')]) {
         				sh 'docker login'
-        				sh 'docker build --rm . -t nikneal91/i-nikhilsharma03-develop:latest'
-        				sh 'docker push nikneal91/i-nikhilsharma03-develop:latest'
+        				sh "docker build --rm . -t nikneal91/i-nikhilsharma03-${env.BRANCH_NAME}:latest"
+        				sh "docker push nikneal91/i-nikhilsharma03-${env.BRANCH_NAME}:latest"
         			}
                     }
                 }
@@ -29,7 +29,7 @@ tools {
                 		branch 'develop'
                 	}
                 steps {
-                		sh 'docker run -d -p 80:8080 --name devopssampleapplication nikneal91/i-nikhilsharma03-develop:latest'
+                		sh "docker run -d -p 80:8080 --name devopssampleapplication nikneal91/i-nikhilsharma03-${env.BRANCH_NAME}:latest"
 
                 }
                 }
