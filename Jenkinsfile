@@ -4,7 +4,12 @@ tools {
       maven 'MAVEN3'
       jdk 'jdk8'
     }
-    stages { 
+    stages {
+     stage('Branch test') {
+                steps {
+                sh "echo nikneal91/i-nikhilsharma03-${env.BRANCH_NAME}:latest"
+    			}
+                }
         stage('Build') {
             steps {
             sh 'mvn clean package'
