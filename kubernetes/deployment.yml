@@ -2,13 +2,13 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nagp-demo-kubernetes
+  namespace: kubernetes-cluster-nikhilsharma03
   labels:
     app: myapp
 spec:
   template:
     metadata:
       name: myapp-pod
-      namespace: kubernetes-cluster-nikhilsharma03
       labels:
         app: myapp
         type: front-end
