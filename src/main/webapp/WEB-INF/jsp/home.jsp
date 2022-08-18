@@ -39,14 +39,30 @@
 	</header>
 	<div style="margin-top: 180px;"></div>
 	<div class="container">
+
+	<div class="row">
+
+	<div class="col-md-6">
 	<h3>Config Properties</h3>
 	<p>Env: <%= System.getenv("Environment") %></p>
 	<p>API_URL: <%= System.getenv("API_URL") %></p>
 	<p>Language <%= System.getenv("Language") %></p>
-		<img height="100%" width="100%"
-			src="${pageContext.request.contextPath}/resources/images/helloWorld.jpg"
-			alt="Nagarro DevOps" />
+
 	</div>
+	<div class="col-md-6">
+    	<h3>kubectl secret</h3>
+    	<p>Env: <%= System.getenv("username") %></p>
+    	<p>API_URL: <%= System.getenv("password") %></p>
+    	</div>
+
+
+	</div>
+	<img height="100%" width="100%"
+    			src="${pageContext.request.contextPath}/resources/images/helloWorld.jpg"
+    			alt="Nagarro DevOps" />
+	</div>
+
+
 	<div class="container-fluid">
 		<div style="margin-top: 50px;"></div>
 		<%@include file="footer.jsp"%>

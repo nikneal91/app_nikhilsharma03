@@ -64,10 +64,7 @@ tools {
             steps {
                 sh 'gcloud container clusters get-credentials nagp-gke --zone asia-southeast1-a --project dogwood-abacus-359409'
            		sh 'kubectl get nodes'
-           		sh 'kubectl apply -f kubernetes/namespace.yml'
-           		sh 'kubectl apply -f kubernetes/configMap.yml'
-           		sh 'kubectl apply -f kubernetes/deployment.yml'
-           		sh 'kubectl apply -f kubernetes/lb-service.yml'
+           		sh 'kubectl apply -f kubernetes/devOps-${env.BRANCH_NAME}.yml'      		
             }
         }
 		
