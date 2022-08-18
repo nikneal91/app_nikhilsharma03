@@ -5,11 +5,6 @@ tools {
       jdk 'jdk8'
     }
     stages {
-     stage('Branch test') {
-                steps {
-                sh "echo nikneal91/i-nikhilsharma03-${env.BRANCH_NAME}:latest"
-    			}
-                }
         stage('Build') {
             steps {
             sh 'mvn clean package'
@@ -40,6 +35,8 @@ tools {
 			steps {
 				dir("DemoSampleApp_Jmeter") {
 						sh "mvn clean -Pperformance verify"
+						sh 'docker container stop devopssampleapplication'
+                        sh 'docker container rm devopssampleapplication'
 				}    
 			}
         }
@@ -48,8 +45,7 @@ tools {
                  		 branch 'develop'
                  	  }
                     steps {
-                        sh 'docker container stop devopssampleapplication'
-        			    sh 'docker container rm devopssampleapplication'
+
         			}
                 }
 		stage('SonarQube Analysis') {

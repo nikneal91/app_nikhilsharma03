@@ -46,8 +46,11 @@
 	<h3>Config Properties</h3>
 	<p>Env: <%= System.getenv("Environment") %></p>
 	<p>API_URL: <%= System.getenv("API_URL") %></p>
-	<p>Language <%= System.getenv("Language") %></p>
-
+	<p>Language <%= System.getenv("Language") %></p><br />
+	<p>Name: <%= System.getenv("name") %></p>
+    <p>employeeid: <%= System.getenv("employeeid") %></p>
+    <p>emailid <%= System.getenv("emailid") %></p>
+    <p>type: <%= System.getenv("type") %></p>
 	</div>
 	<div class="col-md-6">
     	<h3>kubectl secret</h3>

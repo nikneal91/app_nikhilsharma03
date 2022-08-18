@@ -12,14 +12,19 @@ metadata:
   labels:
     app: "app-settings"
 data:
-  API_URL: "http://www.google.com"
-  Environment: "development"
-  Language: "English"
+  API_URL: "http://www.facebook.com"
+  Environment: "Production"
+  Language: "Hindi"
+  name: "Nikhil Sharma"
+  employeeid: "3146702"
+  emailid: "nikhil.sharma03@nagarro.com"
+  type: "java"
+
 ---
 apiVersion: v1
 data:
   username: YWRtaW4=
-  password: MWYyZDFlMmU2N2Rm
+  password: YWRtaW4xMjM=
 kind: Secret
 metadata:
   name: nagp-secret
