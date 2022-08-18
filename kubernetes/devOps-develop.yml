@@ -47,7 +47,7 @@ spec:
           envFrom:
             - configMapRef:
                 name: app-settings
-            - secretef:
+            - secretRef:
                 name: "nagp-secret"
 
   replicas: 4
