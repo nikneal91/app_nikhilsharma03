@@ -51,8 +51,8 @@
 	</div>
 	<div class="col-md-6">
     	<h3>kubectl secret</h3>
-    	<p>Env: <%= System.getenv("username") %></p>
-    	<p>API_URL: <%= System.getenv("password") %></p>
+    	<p>Username: <%= System.getenv("username") %></p>
+    	<p>Password: <%= System.getenv("password") %></p>
     	</div>
 
 
