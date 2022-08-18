@@ -8,7 +8,6 @@
 		<b>In case of any query please Contact</b> @ <a href="mailto:coe.devops@nagarro.com">
 			coe.devops@nagarro.com</a>
 	</div>
-	<strong>Copyright &copy; <a
-		href="http://www.nagarro.com/us/en" target="_blank">Nagarro</a>.
-	</strong> All rights reserved.
+	<strong>Copyright &copy; <a href="http://www.nagarro.com/us/en" rel="noopener" target="_blank">Nagarro</a>.</strong>
+	All rights reserved.
 </footer>
