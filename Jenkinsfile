@@ -40,14 +40,6 @@ tools {
 				}    
 			}
         }
-        stage('CleanUp docker container') {
-                 when {
-                 		 branch 'develop'
-                 	  }
-                    steps {
-
-        			}
-                }
 		stage('SonarQube Analysis') {
 		when {
 		  branch 'master'
